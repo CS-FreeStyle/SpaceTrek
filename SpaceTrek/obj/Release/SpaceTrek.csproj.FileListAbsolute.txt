@@ -1,0 +1,10 @@
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\App.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\MainPage.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\View\CalendarPage.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\View\Camera.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\View\HomePage.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\View\ObjectDetailPage.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\View\ObjectListPage.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\View\VideoViewerPage.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\View\CreateEventPage.g.cs
+E:\Work\Pribadi\NASA\SpaceTrek\SpaceTrek\obj\Release\SpaceTrek.g.resources

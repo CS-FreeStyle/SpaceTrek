@@ -1,0 +1,168 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="SpaceTrek.ObjectDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="StreamItemTemplate">
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+				<Grid Height="120" Width="120" Background="Black">
+					<Image Source="{Binding thumbnail}" Width="120" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top" />
+					<Path Width="20.5832" Height="31.6667" Canvas.Left="30.0833" Canvas.Top="22.1667" Stretch="Fill" Data="F1 M 30.0833,22.1667L 50.6665,37.6043L 50.6665,38.7918L 30.0833,53.8333L 30.0833,22.1667 Z " HorizontalAlignment="Center" VerticalAlignment="Center">
+						<Path.Fill>
+							<SolidColorBrush Color="{StaticResource Color1Yellow}"/>
+						</Path.Fill>
+					</Path>
+				</Grid>
+				<StackPanel Orientation="Vertical" Width="310">
+					<Grid Margin="0">
+						<Grid.Background>
+							<SolidColorBrush Color="{StaticResource Color1Yellow}"/>
+						</Grid.Background>
+						<StackPanel Margin="12,0,0,0" Orientation="Horizontal">
+							<TextBlock Text="Channel #" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas" HorizontalAlignment="Left" Height="27" >
+								<TextBlock.Foreground>
+									<SolidColorBrush Color="{StaticResource Color2Black}"/>
+								</TextBlock.Foreground>
+							</TextBlock>
+							<TextBlock Text="{Binding id_channel}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas" HorizontalAlignment="Left" Margin="6,0,0,0" >
+								<TextBlock.Foreground>
+									<SolidColorBrush Color="{StaticResource Color2Black}"/>
+								</TextBlock.Foreground>
+							</TextBlock>
+						</StackPanel>
+						<Path x:Name="path" Data="M400,0 L420,22.75 L400,42.25 z" Margin="0,0,-14,0" Stretch="Fill" UseLayoutRounding="False" StrokeThickness="0" Width="14" Height="27" HorizontalAlignment="Right">
+							<Path.Fill>
+								<SolidColorBrush Color="{StaticResource Color1Yellow}"/>
+							</Path.Fill>
+						</Path>
+					</Grid>
+					<TextBlock Text="{Binding timestamp}" Margin="12,0,0,0">
+						<TextBlock.Foreground>
+							<SolidColorBrush Color="{StaticResource Color3White}"/>
+						</TextBlock.Foreground>
+					</TextBlock>
+                    <TextBlock Text="{Binding user}" Margin="12,0,0,0" Foreground="#B2FFFFFF" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+				</StackPanel>
+			</StackPanel>
+		</DataTemplate>
+	</phone:PhoneApplicationPage.Resources>
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar BackgroundColor="{StaticResource Color1Yellow}" ForegroundColor="{StaticResource Color2Black}">
+			<shell:ApplicationBarIconButton x:Name="abRefresh" IconUri="/Assets/AppBar/refresh.png" Text="refresh" Click="abRefresh_Click"/>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="/SpaceTrek;component/Assets/bg2.JPG"/>
+    	</Grid.Background>
+        <phone:Pivot>
+			<phone:Pivot.Title>
+				<TextBlock Text="{Binding spaceObject.name}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas" >
+					<TextBlock.Foreground>
+						<SolidColorBrush Color="{StaticResource Color1Yellow}"/>
+					</TextBlock.Foreground>
+				</TextBlock>
+			</phone:Pivot.Title>
+            <!--Pivot item one-->
+        	<phone:PivotItem Header="details" Margin="0,28,0,0">
+                <ScrollViewer>
+                    <Grid Margin="0">
+        			<Grid.RowDefinitions>
+        				<RowDefinition Height="Auto"/>
+        				<RowDefinition Height="Auto"/>
+        				<RowDefinition Height="*"/>
+        			</Grid.RowDefinitions>
+        			<StackPanel Margin="0" Grid.Row="0">
+        				<Grid Margin="0" VerticalAlignment="Top" Background="#34FFFFFF">
+        					<Grid.ColumnDefinitions>
+        						<ColumnDefinition Width="Auto"/>
+        						<ColumnDefinition Width="*"/>
+        					</Grid.ColumnDefinitions>
+        					<Image x:Name="imgLogo" Grid.Column="0" Margin="24,0,0,0" Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding spaceObject.image}"/>
+        					<StackPanel Grid.Column="1" Margin="12,12,0,12">
+        						<StackPanel Orientation="Horizontal">
+        							<TextBlock x:Name="txtDays" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding spaceObject.occurences[0].days}" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas">
+        								<TextBlock.Foreground>
+        									<SolidColorBrush Color="{StaticResource Color3White}"/>
+        								</TextBlock.Foreground>
+        							</TextBlock>
+        							<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" days" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas" />
+        						</StackPanel>
+        						<StackPanel Orientation="Horizontal">
+        							<TextBlock x:Name="txtHours" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding spaceObject.occurences[0].hours}" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas">
+        								<TextBlock.Foreground>
+        									<SolidColorBrush Color="{StaticResource Color3White}"/>
+        								</TextBlock.Foreground>
+        							</TextBlock>
+        							<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" hours" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas" />
+        						</StackPanel>
+        						<StackPanel Orientation="Horizontal">
+        							<TextBlock x:Name="txtMinutes" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding spaceObject.occurences[0].minutes}" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas">
+        								<TextBlock.Foreground>
+        									<SolidColorBrush Color="{StaticResource Color3White}"/>
+        								</TextBlock.Foreground>
+        							</TextBlock>
+        							<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" minutes" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas" />
+        						</StackPanel>
+        						<StackPanel Orientation="Horizontal">
+        							<TextBlock x:Name="txtSeconds" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding spaceObject.occurences[0].seconds}" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas">
+        								<TextBlock.Foreground>
+        									<SolidColorBrush Color="{StaticResource Color3White}"/>
+        								</TextBlock.Foreground>
+        							</TextBlock>
+        							<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" seconds" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas" />
+        						</StackPanel>
+        						<StackPanel Orientation="Horizontal" Visibility="Collapsed">
+        							<TextBlock x:Name="txtDistance" HorizontalAlignment="Left" TextWrapping="Wrap" Text="20" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas">
+        								<TextBlock.Foreground>
+        									<SolidColorBrush Color="{StaticResource Color1Yellow}"/>
+        								</TextBlock.Foreground>
+        							</TextBlock>
+        							<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" km from here" VerticalAlignment="Top" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="/SpaceTrek;component/Fonts/Fonts.zip#Bebas">
+        								<TextBlock.Foreground>
+        									<SolidColorBrush Color="{StaticResource Color1Yellow}"/>
+        								</TextBlock.Foreground>
+        							</TextBlock>
+        						</StackPanel>
+        					</StackPanel>
+        				</Grid>
+        			</StackPanel>
+        			<StackPanel Margin="0" VerticalAlignment="Top" Grid.Row="1">
+        				<TextBlock x:Name="txtDesc" TextWrapping="Wrap" Text="{Binding spaceObject.description}" Margin="24,12,12,0">
+        					<TextBlock.Foreground>
+        						<SolidColorBrush Color="{StaticResource Color3White}"/>
+        					</TextBlock.Foreground>
+        				</TextBlock>
+        			</StackPanel>
+                        <StackPanel Grid.Row="2">
+                            <Button Tap="OnRecordTapped" x:Name="btnRecord" Content="record now!" Margin="0,24,120,0" Style="{StaticResource ButtonStyle1}" Foreground="#FF1D1D1D" VerticalAlignment="Top" Height="60"/>
+                            <Button Tap="OnEventTapped"  x:Name="btnEvent" Content="create event" Margin="0,12,180,0" Style="{StaticResource ButtonStyle1}" Foreground="#FF1D1D1D" VerticalAlignment="Top" Height="60"/>
+
+                        </StackPanel>
+        		</Grid>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+        	<phone:PivotItem Header="stream">
+        		<Grid>
+        			<ListBox ItemTemplate="{StaticResource StreamItemTemplate}" ItemsSource="{Binding spaceObject.channels}"  Margin="12,0,0,0" SelectionChanged="ListBox_SelectionChanged_1"/>
+        		</Grid>
+        	</phone:PivotItem>
+        </phone:Pivot>
+        <!--Pivot Control-->
+    </Grid>
+    
+</phone:PhoneApplicationPage>

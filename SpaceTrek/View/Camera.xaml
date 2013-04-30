@@ -1,0 +1,42 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SpaceTrek.View.Camera"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="LandscapeLeft"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <!--<ColumnDefinition Width="600" />-->
+            <!--<ColumnDefinition Width="*" />-->
+        </Grid.ColumnDefinitions>
+
+        <Canvas Tap="OnCameraTapped" x:Name="viewfinderCanvas" Width="640" Height="480" 
+                   HorizontalAlignment="Left" >
+
+            <!--Camera viewfinder -->
+            <Canvas.Background>
+                <VideoBrush x:Name="viewfinderBrush" />
+            </Canvas.Background>
+
+        </Canvas>
+        <Grid Background="Transparent" x:Name="Loader">
+            <TextBlock Text="Please waiting when we're creating a new channel.." VerticalAlignment="Center" HorizontalAlignment="Center" ></TextBlock>
+        </Grid>
+
+        <!--Button StackPanel to the right of viewfinder>-->
+        <!--<StackPanel Grid.Column="1" >
+            <ToggleButton x:Name="ShutterButton" Content="SH" Click="ShutterButton_Click" FontSize="26" FontWeight="ExtraBold" Height="85" Width="100" />
+        </StackPanel>-->
+ </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,33 @@
+﻿<SpaceTrek:SpaceObjectCollection xmlns:SpaceTrek="clr-namespace:SpaceTrek" xmlns:Model="clr-namespace:SpaceTrek.Model" IsError="True" IsLoad="False" IsRefresh="True" Message="Ligula sed litora imperdiet">
+	<SpaceTrek:SpaceObjectCollection.SpaceItems>
+		<SpaceTrek:SpaceObject IsError="True" IsLoad="False" IsRefresh="True" Message="Nullam aptent" desc="The Quadrantids have the potential to be the strongest shower of the year but usually fall short due to the short length of maximum activity (6 hours) and the poor weather experienced during early January. The average hourly rates one can expect under dark skies is 25. These meteors usually lack persistent trains but often produce bright fireballs. Due to the high northerly declination (celestial latitude) these meteors are not well seen from the southern hemisphere." id_object="18" name="Quadrantids" type="meteor">
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="False" IsLoad="True" IsRefresh="False" Message="Est erat facilisis cubilia facilisi" desc="Etiam elementum commodo dictumst dictum" id_object="29" name="Vestibulum lectus libero eleifend conubia" type="other">
+			
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="True" IsLoad="False" IsRefresh="True" Message="Lobortis adipiscing sed" desc="Inceptos parturient vestibulum habitasse interdum" id_object="22" name="Egestas fusce litora vestibulum luctus" type="meteor">
+			
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="False" IsLoad="True" IsRefresh="False" Message="Imperdiet vestibulum" desc="Himenaeos gravida mattis" id_object="21" name="Proin nibh iaculis" type="satellite">
+			
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="True" IsLoad="False" IsRefresh="True" Message="Vestibulum rhoncus orci" desc="Fames odio vel vestibulum" id_object="19" name="Mauris mollis porttitor montes" type="station">
+			
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="False" IsLoad="True" IsRefresh="False" Message="Dis quisque vulputate cras duis" desc="Nam urna" id_object="38" name="Sed venenatis suscipit" type="station">
+			
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="True" IsLoad="False" IsRefresh="True" Message="Blandit sociis convallis taciti" desc="Ultrices vehicula consequat" id_object="52" name="Est aliquet semper volutpat" type="meteor">
+			
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="False" IsLoad="True" IsRefresh="False" Message="Neque turpis varius aenean" desc="Tempus tortor" id_object="16" name="Elementum erat" type="other">
+			
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="True" IsLoad="False" IsRefresh="True" Message="Feugiat porta" desc="Vestibulum facilisi fringilla euismod" id_object="10" name="Faucibus aptent" type="satellite">
+			
+		</SpaceTrek:SpaceObject>
+		<SpaceTrek:SpaceObject IsError="False" IsLoad="True" IsRefresh="False" Message="Adipiscing parturient nisl libero interdum" desc="Parturient hendrerit vel vestibulum nam" id_object="89" name="Lacinia vitae himenaeos inceptos vestibulum" type="satellite">
+			
+		</SpaceTrek:SpaceObject>
+	</SpaceTrek:SpaceObjectCollection.SpaceItems>
+</SpaceTrek:SpaceObjectCollection>
